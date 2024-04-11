@@ -2,7 +2,7 @@ extends Node2D
 
 enum BallPosition{ TOP, LEFT, BOTTOM, RIGHT }
 
-const ballScene = preload("res://ball.tscn")
+const ballScene = preload("res://scenes/ball.tscn")
 
 const TILE_COUNT = 7
 const TILE_SIZE = 32
