@@ -50,10 +50,8 @@ func spawn_ball():
 	ball.outOfReach.connect(on_ball_out_of_reach)
 	add_child(ball)
 	currentBall = ball
-	print("ball spawned")
 	
 
 func on_ball_out_of_reach():
-	print("on ball out of reach")
 	currentBall.queue_free()
 	spawn_ball()

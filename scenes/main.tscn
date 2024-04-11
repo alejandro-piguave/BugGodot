@@ -1,5 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://d1x1n7w4vst14"]
+[gd_scene load_steps=40 format=3 uid="uid://d1x1n7w4vst14"]
 
+[ext_resource type="Texture2D" uid="uid://bf7hfqrdt2fjm" path="res://sprites/tiles/grass.png" id="1_nvm53"]
+[ext_resource type="Texture2D" uid="uid://d4m0bvuhfv5h2" path="res://sprites/tiles/wall.png" id="2_ffsba"]
+[ext_resource type="Texture2D" uid="uid://dg3m117j0qask" path="res://sprites/tiles/pipe.png" id="3_tchmj"]
 [ext_resource type="Script" path="res://scripts/Bug.gd" id="4_wa2t6"]
 [ext_resource type="Texture2D" uid="uid://bjc6v0e2rii00" path="res://sprites/bug/blue/tile007.png" id="5_wpd3e"]
 [ext_resource type="Texture2D" uid="uid://3crmt77qfqd4" path="res://sprites/bug/blue/tile006.png" id="6_ui0l1"]
@@ -31,9 +34,35 @@
 [ext_resource type="Texture2D" uid="uid://cu0i8y37qnbo" path="res://sprites/bug/silver/tile033.png" id="32_7ctyy"]
 [ext_resource type="Script" path="res://scripts/BallSpawner.gd" id="33_em0um"]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtikg"]
+texture = ExtResource("1_nvm53")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c1h4p"]
+texture = ExtResource("3_tchmj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bk58p"]
+texture = ExtResource("2_ffsba")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_wudv1"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_dtikg")
+sources/1 = SubResource("TileSetAtlasSource_c1h4p")
+sources/2 = SubResource("TileSetAtlasSource_bk58p")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nhsyk"]
 radius = 18.1818
@@ -163,17 +192,19 @@ animations = [{
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(0.997136, 1)
 tile_set = SubResource("TileSet_wudv1")
 format = 2
 layer_0/name = "background"
-layer_0/tile_data = PackedInt32Array(0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 65540, 2, 0, 65541, 2, 0, 131077, 2, 0, 131078, 2, 0, 65542, 2, 0, 6, 2, 0, 5, 2, 0, 131076, 2, 0, 196612, 2, 0, 196611, 2, 0, 131075, 2, 0, 131074, 2, 0, 65538, 2, 0, 65537, 2, 0, 65536, 2, 0, 65539, 2, 0, 131073, 2, 0, 131072, 2, 0, 196608, 2, 0, 196609, 2, 0, 196610, 2, 0, 196613, 2, 0, 196614, 2, 0, 262150, 2, 0, 327686, 2, 0, 393222, 2, 0, 393216, 2, 0, 327680, 2, 0, 262144, 2, 0, 262145, 2, 0, 327681, 2, 0, 393217, 2, 0, 262146, 2, 0, 327682, 2, 0, 393218, 2, 0, 393219, 2, 0, 327683, 2, 0, 327684, 2, 0, 262148, 2, 0, 262147, 2, 0, 262149, 2, 0, 327685, 2, 0, 393221, 2, 0, 393220, 2, 0)
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 65540, 0, 0, 65541, 0, 0, 131077, 0, 0, 131078, 0, 0, 65542, 0, 0, 6, 0, 0, 5, 0, 0, 131076, 0, 0, 196612, 0, 0, 196611, 0, 0, 131075, 0, 0, 131074, 0, 0, 65538, 0, 0, 65537, 0, 0, 65536, 0, 0, 65539, 0, 0, 131073, 0, 0, 131072, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196613, 0, 0, 196614, 0, 0, 262150, 0, 0, 327686, 0, 0, 393222, 0, 0, 393216, 0, 0, 327680, 0, 0, 262144, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 393219, 0, 0, 327683, 0, 0, 327684, 0, 0, 262148, 0, 0, 262147, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 393220, 0, 0)
 layer_1/name = "foreground"
 layer_1/z_index = 1
-layer_1/tile_data = PackedInt32Array(393222, 3, 0, 6, 3, 0, 0, 3, 0, 393216, 3, 0, 393217, 4, 0, 393218, 4, 0, 393219, 4, 0, 393220, 4, 0, 393221, 4, 0, 327686, 4, 1610612736, 262150, 4, 1610612736, 196614, 4, 1610612736, 131078, 4, 1610612736, 65542, 4, 1610612736, 5, 4, 805306368, 4, 4, 805306368, 3, 4, 805306368, 2, 4, 805306368, 1, 4, 805306368, 65536, 4, 1342177280, 131072, 4, 1342177280, 196608, 4, 1342177280, 262144, 4, 1342177280, 327680, 4, 1342177280)
+layer_1/tile_data = PackedInt32Array(393222, 2, 0, 6, 2, 0, 0, 2, 0, 393216, 2, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 327686, 1, 1610612736, 262150, 1, 1610612736, 196614, 1, 1610612736, 131078, 1, 1610612736, 65542, 1, 1610612736, 5, 1, 805306368, 4, 1, 805306368, 3, 1, 805306368, 2, 1, 805306368, 1, 1, 805306368, 65536, 1, 1342177280, 131072, 1, 1342177280, 196608, 1, 1342177280, 262144, 1, 1342177280, 327680, 1, 1342177280)
 
 [node name="Bug" type="CharacterBody2D" parent="."]
 position = Vector2(111, 112)
 scale = Vector2(0.66, 0.66)
+collision_layer = 2
 script = ExtResource("4_wa2t6")
 
 [node name="StreamPlayer" type="AudioStreamPlayer2D" parent="Bug"]
@@ -181,7 +212,6 @@ position = Vector2(-168.182, -169.697)
 scale = Vector2(1.51515, 1.51515)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bug"]
-position = Vector2(0, -3.0303)
 shape = SubResource("CircleShape2D_nhsyk")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Bug"]
