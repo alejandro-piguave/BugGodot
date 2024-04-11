@@ -1,8 +1,5 @@
-[gd_scene load_steps=40 format=3 uid="uid://d1x1n7w4vst14"]
+[gd_scene load_steps=34 format=3 uid="uid://d1x1n7w4vst14"]
 
-[ext_resource type="Texture2D" uid="uid://bf7hfqrdt2fjm" path="res://sprites/tiles/grass.png" id="1_nvm53"]
-[ext_resource type="Texture2D" uid="uid://d4m0bvuhfv5h2" path="res://sprites/tiles/wall.png" id="2_ffsba"]
-[ext_resource type="Texture2D" uid="uid://dg3m117j0qask" path="res://sprites/tiles/pipe.png" id="3_tchmj"]
 [ext_resource type="Script" path="res://scripts/Bug.gd" id="4_wa2t6"]
 [ext_resource type="Texture2D" uid="uid://bjc6v0e2rii00" path="res://sprites/bug/blue/tile007.png" id="5_wpd3e"]
 [ext_resource type="Texture2D" uid="uid://3crmt77qfqd4" path="res://sprites/bug/blue/tile006.png" id="6_ui0l1"]
@@ -34,35 +31,9 @@
 [ext_resource type="Texture2D" uid="uid://cu0i8y37qnbo" path="res://sprites/bug/silver/tile033.png" id="32_7ctyy"]
 [ext_resource type="Script" path="res://scripts/BallSpawner.gd" id="33_em0um"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lt6rm"]
-texture = ExtResource("1_nvm53")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lmxtt"]
-texture = ExtResource("2_ffsba")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fikns"]
-texture = ExtResource("3_tchmj")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-
 [sub_resource type="TileSet" id="TileSet_wudv1"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/2 = SubResource("TileSetAtlasSource_lt6rm")
-sources/3 = SubResource("TileSetAtlasSource_lmxtt")
-sources/4 = SubResource("TileSetAtlasSource_fikns")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nhsyk"]
 radius = 18.1818

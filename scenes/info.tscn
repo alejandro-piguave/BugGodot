@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://pb3et2fkxq0u"]
+
+[ext_resource type="Texture2D" uid="uid://bf7hfqrdt2fjm" path="res://sprites/tiles/grass.png" id="1_gvj2u"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lt6rm"]
+texture = ExtResource("1_gvj2u")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_xp6bd"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_lt6rm")
+
+[node name="Info" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(3.6, 3.6)
+tile_set = SubResource("TileSet_xp6bd")
+format = 2
+layer_0/name = "background"
+layer_0/tile_data = PackedInt32Array(0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 65540, 2, 0, 65541, 2, 0, 131077, 2, 0, 131078, 2, 0, 65542, 2, 0, 6, 2, 0, 5, 2, 0, 131076, 2, 0, 196612, 2, 0, 196611, 2, 0, 131075, 2, 0, 131074, 2, 0, 65538, 2, 0, 65537, 2, 0, 65536, 2, 0, 65539, 2, 0, 131073, 2, 0, 131072, 2, 0, 196608, 2, 0, 196609, 2, 0, 196610, 2, 0, 196613, 2, 0, 196614, 2, 0, 262150, 2, 0, 327686, 2, 0, 393222, 2, 0, 393216, 2, 0, 327680, 2, 0, 262144, 2, 0, 262145, 2, 0, 327681, 2, 0, 393217, 2, 0, 262146, 2, 0, 327682, 2, 0, 393218, 2, 0, 393219, 2, 0, 327683, 2, 0, 327684, 2, 0, 262148, 2, 0, 262147, 2, 0, 262149, 2, 0, 327685, 2, 0, 393221, 2, 0, 393220, 2, 0)
+layer_1/name = "foreground"
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array(393222, 3, 0, 6, 3, 0, 0, 3, 0, 393216, 3, 0, 393217, 4, 0, 393218, 4, 0, 393219, 4, 0, 393220, 4, 0, 393221, 4, 0, 327686, 4, 1610612736, 262150, 4, 1610612736, 196614, 4, 1610612736, 131078, 4, 1610612736, 65542, 4, 1610612736, 5, 4, 805306368, 4, 4, 805306368, 3, 4, 805306368, 2, 4, 805306368, 1, 4, 805306368, 65536, 4, 1342177280, 131072, 4, 1342177280, 196608, 4, 1342177280, 262144, 4, 1342177280, 327680, 4, 1342177280)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 60.0
+offset_right = 683.0
+offset_bottom = 186.0
+theme_override_font_sizes/font_size = 90
+text = "Instructions"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 204.0
+offset_right = 755.0
+offset_bottom = 714.0
+color = Color(0, 0, 0, 0.435294)
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 678.0
+offset_bottom = 524.0
+text = "Use W,A,S,D to move. 
+The pipes will turn red for a moment before the balls start coming out of them. 
+If the balls return to their respective opposite pipe and you survive, it counts as a point. 
+Try to get as many points as possible."
+autowrap_mode = 3
