@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://d1x1n7w4vst14"]
+[gd_scene load_steps=41 format=3 uid="uid://d1x1n7w4vst14"]
 
 [ext_resource type="Texture2D" uid="uid://bf7hfqrdt2fjm" path="res://sprites/tiles/grass.png" id="1_nvm53"]
 [ext_resource type="Texture2D" uid="uid://d4m0bvuhfv5h2" path="res://sprites/tiles/wall.png" id="2_ffsba"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://cgegy5y6g6rr7" path="res://sprites/bug/red/tile000.png" id="26_xuvxf"]
 [ext_resource type="Texture2D" uid="uid://ctp412cympj3m" path="res://sprites/bug/red/tile002.png" id="27_mrgnl"]
 [ext_resource type="Texture2D" uid="uid://6jk3cfn5gsio" path="res://sprites/bug/red/tile003.png" id="28_n44pi"]
+[ext_resource type="Texture2D" uid="uid://dl1d7mnu8qdtw" path="res://sprites/bug/red/tile005.png" id="29_easwd"]
 [ext_resource type="Texture2D" uid="uid://b6ea4s3s2a6rn" path="res://sprites/bug/silver/tile031.png" id="29_nck86"]
 [ext_resource type="Texture2D" uid="uid://waakp0e2e7xo" path="res://sprites/bug/silver/tile030.png" id="30_olw24"]
 [ext_resource type="Texture2D" uid="uid://b15gwaf011reu" path="res://sprites/bug/silver/tile032.png" id="31_7rej3"]
@@ -173,6 +174,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("29_easwd")
+}],
+"loop": true,
+"name": &"red_dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("29_nck86")
 }, {
 "duration": 1.0,
@@ -216,7 +225,7 @@ shape = SubResource("CircleShape2D_nhsyk")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Bug"]
 sprite_frames = SubResource("SpriteFrames_brwon")
-animation = &"silver"
+animation = &"red_dead"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

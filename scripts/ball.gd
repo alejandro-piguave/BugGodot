@@ -26,8 +26,6 @@ func _process(delta):
 			if position.x > boundValue: 
 				outOfReach.emit()
 
-
-
-func _on_body_entered(body):
+func _on_area_2d_body_entered(body):
 	if body.name == "Bug":
-		print("player touched")
+		playerTouch.emit()

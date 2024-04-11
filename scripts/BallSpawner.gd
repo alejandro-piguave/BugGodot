@@ -48,6 +48,7 @@ func spawn_ball():
 			ball.boundPosition = Ball.BoundPosition.LEFT
 			ball.boundValue = 0
 	ball.outOfReach.connect(on_ball_out_of_reach)
+	ball.playerTouch.connect(on_player_touch)
 	add_child(ball)
 	currentBall = ball
 	
@@ -55,3 +56,6 @@ func spawn_ball():
 func on_ball_out_of_reach():
 	currentBall.queue_free()
 	spawn_ball()
+
+func on_player_touch():
+	$"../Bug".die()
