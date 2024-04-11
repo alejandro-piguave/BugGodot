@@ -39,6 +39,7 @@ text = "BUG
 "
 
 [node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 146.0
 offset_top = 371.0
 offset_right = 672.0

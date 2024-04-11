@@ -1,6 +1,6 @@
 extends Node2D
 
-enum BallPosition{ TOP, LEFT, BOTTOM, RIGHT }
+enum BallPosition { TOP, LEFT, BOTTOM, RIGHT }
 
 const ballScene = preload("res://scenes/ball.tscn")
 
@@ -10,13 +10,17 @@ const MAP_SIZE = TILE_SIZE * TILE_COUNT
 
 const BALL_IMPULSE = 100
 
-var currentBall: Ball
+const ball_amount: int = 2
+var detected_balls: int = 0
+var current_balls: Array[Ball]
+
+var score: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	spawn_ball()
+	spawn_balls()
 
-func spawn_ball():
+func create_ball():
 	var ball = ballScene.instantiate()
 	
 	var ballPosition: BallPosition = randi() % BallPosition.size()
@@ -49,13 +53,27 @@ func spawn_ball():
 			ball.boundValue = 0
 	ball.outOfReach.connect(on_ball_out_of_reach)
 	ball.playerTouch.connect(on_player_touch)
-	add_child(ball)
-	currentBall = ball
 	
-
+	return ball
+	
+	
+func spawn_balls():
+	for i in ball_amount:
+		var ball = create_ball()
+		add_child(ball)
+		current_balls.append(ball)
+	detected_balls = 0
 func on_ball_out_of_reach():
-	currentBall.queue_free()
-	spawn_ball()
+	detected_balls += 1
+	
+	if detected_balls == ball_amount and not $"../Bug".dead:
+		score += 1
+		$"../ScoreLabel".text = str(score)
+		for i in ball_amount:
+			current_balls[i].queue_free()
+		current_balls.clear()
+		spawn_balls()
+	
 
 func on_player_touch():
 	$"../Bug".die()

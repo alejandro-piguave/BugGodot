@@ -210,6 +210,17 @@ layer_1/name = "foreground"
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(393222, 2, 0, 6, 2, 0, 0, 2, 0, 393216, 2, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 327686, 1, 1610612736, 262150, 1, 1610612736, 196614, 1, 1610612736, 131078, 1, 1610612736, 65542, 1, 1610612736, 5, 1, 805306368, 4, 1, 805306368, 3, 1, 805306368, 2, 1, 805306368, 1, 1, 805306368, 65536, 1, 1342177280, 131072, 1, 1342177280, 196608, 1, 1342177280, 262144, 1, 1342177280, 327680, 1, 1342177280)
 
+[node name="ScoreLabel" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.431373)
+offset_left = 86.0
+offset_top = 45.0
+offset_right = 137.0
+offset_bottom = 169.0
+theme_override_font_sizes/font_size = 80
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Bug" type="CharacterBody2D" parent="."]
 position = Vector2(111, 112)
 scale = Vector2(0.66, 0.66)
