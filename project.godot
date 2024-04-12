@@ -43,6 +43,11 @@ move_right={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://translations/translations.en.translation", "res://translations/translations.es.translation")
+locale/test="es"
+
 [physics]
 
 2d/canvas_textures/default_texture_filter=1

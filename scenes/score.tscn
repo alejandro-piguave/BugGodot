@@ -25,7 +25,7 @@ offset_top = 60.0
 offset_right = 683.0
 offset_bottom = 186.0
 theme_override_font_sizes/font_size = 90
-text = "You died!"
+text = "you_died_key"
 horizontal_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -55,7 +55,7 @@ offset_top = 517.0
 offset_right = 651.0
 offset_bottom = 612.0
 theme_override_font_sizes/font_size = 40
-text = "MENU"
+text = "menu_key"
 
 [node name="PlayAgainButton" type="Button" parent="."]
 layout_mode = 0
@@ -64,7 +64,7 @@ offset_top = 656.0
 offset_right = 646.0
 offset_bottom = 743.0
 theme_override_font_sizes/font_size = 40
-text = "PLAY AGAIN"
+text = "play_again_key"
 
 [connection signal="button_down" from="MenuButton" to="." method="_on_menu_button_button_down"]
 [connection signal="button_down" from="PlayAgainButton" to="." method="_on_play_again_button_button_down"]

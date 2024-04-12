@@ -22,7 +22,7 @@ func _ready():
 		var score = node_data.get("score", 0)
 		var best = node_data.get("best", 0)
 		
-		var format_str = "SCORE: %d\nBEST: %d" % [score, best]
+		var format_str = tr("score_text_key") % [score, best]
 		$ColorRect/ScoreLabel.text = format_str
 		
 

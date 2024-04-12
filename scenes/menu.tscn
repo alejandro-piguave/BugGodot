@@ -36,7 +36,7 @@ offset_top = 371.0
 offset_right = 672.0
 offset_bottom = 507.0
 theme_override_font_sizes/font_size = 50
-text = "Play"
+text = "play_key"
 
 [node name="InfoButton" type="Button" parent="."]
 layout_mode = 0

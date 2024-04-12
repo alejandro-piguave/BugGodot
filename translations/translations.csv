@@ -1,0 +1,19 @@
+key,en,es
+play_key,Play,Jugar
+instructions_key,Instructions,Instrucciones
+back_key,Back,Volver
+instructions_text_key,"Use W,A,S,D to move. 
+Every turn, some balls will come out of any random pipe. Your goal is to avoid them.
+If the balls return to their respective opposite pipe and you survive, it counts as a point. 
+Try to get as many points as possible.","Utiliza las teclas W,A,S,D para moverte. 
+Cada turno, algunas pelotas saldrán de una tubería aleatoria. Tu objetivo es esquivarlas.
+Si todas las pelotas llegan a su respectiva tubería opuesta y has conseguido sobrevivir, consigues un punto. 
+Intenta conseguir la mayor cantidad de puntos posibles.
+
+"
+you_died_key,You died!,Has muerto!
+menu_key,Menu,Menú
+play_again_key,Play again,Jugar otra vez
+score_text_key,"SCORE: %d
+BEST: %d","PUNTUACIÓN: %d
+MEJOR: %d"
