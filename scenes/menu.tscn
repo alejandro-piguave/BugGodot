@@ -21,32 +21,43 @@ stretch_mode = 1
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 291.0
-offset_top = 156.0
-offset_right = 546.0
-offset_bottom = 321.0
+offset_top = 90.0
+offset_right = 800.0
+offset_bottom = 255.0
 theme_override_font_sizes/font_size = 120
 text = "BUG
 "
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 146.0
-offset_top = 371.0
+offset_top = 300.0
 offset_right = 672.0
-offset_bottom = 507.0
+offset_bottom = 440.0
 theme_override_font_sizes/font_size = 50
 text = "play_key"
 
 [node name="InfoButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 151.0
-offset_top = 555.0
+offset_top = 475.0
 offset_right = 677.0
-offset_bottom = 699.0
+offset_bottom = 615.0
 theme_override_font_sizes/font_size = 50
 text = "Info
 "
 
+[node name="LanguageButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 651.0
+offset_right = 657.0
+offset_bottom = 728.0
+theme_override_font_sizes/font_size = 50
+text = "🇪🇸"
+
 [connection signal="button_down" from="PlayButton" to="." method="_on_play_button_button_down"]
 [connection signal="button_down" from="InfoButton" to="." method="_on_info_button_button_down"]
+[connection signal="button_down" from="LanguageButton" to="." method="_on_language_button_button_down"]
