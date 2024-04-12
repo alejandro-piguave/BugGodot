@@ -74,7 +74,8 @@ func on_ball_out_of_reach():
 		current_balls.clear()
 		spawn_balls()
 	elif $"../Bug".dead:
-			get_tree().change_scene_to_file("res://scenes/score.tscn")
-
+		$"../ScoreSaver".save_score(score)
+		get_tree().change_scene_to_file("res://scenes/score.tscn")
+	
 func on_player_touch():
 	$"../Bug".die()

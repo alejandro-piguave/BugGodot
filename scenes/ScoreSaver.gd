@@ -1,8 +1,23 @@
-extends Control
+extends Node2D
 
-func _ready():
+
+func save_score(score: int):
+	var best = get_best()
+	
+	if score > best:
+		best = score
+	var score_dict = {
+		"score": score,
+		"best": best
+	}
+	var save_game = FileAccess.open("user://score.save", FileAccess.WRITE)
+	var json_string = JSON.stringify(score_dict)
+	save_game.store_line(json_string)
+
+
+func get_best() -> int:
 	if not FileAccess.file_exists("user://score.save"):
-		return # 
+		return 0
 	var save_game = FileAccess.open("user://score.save", FileAccess.READ)
 	while save_game.get_position() < save_game.get_length():
 		var json_string = save_game.get_line()
@@ -19,16 +34,6 @@ func _ready():
 		# Get the data from the JSON object
 		var node_data = json.get_data()
 		
-		var score = node_data.get("score", 0)
 		var best = node_data.get("best", 0)
-		
-		var format_str = "SCORE: %d\nBEST: %d" % [score, best]
-		$ColorRect/ScoreLabel.text = format_str
-		
-
-func _on_menu_button_button_down():
-		get_tree().change_scene_to_file("res://scenes/menu.tscn")
-
-
-func _on_play_again_button_button_down():
-		get_tree().change_scene_to_file("res://scenes/main.tscn")
+		return best
+	return 0
