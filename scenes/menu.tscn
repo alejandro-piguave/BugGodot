@@ -1,16 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy2pddht1jd4y"]
+[gd_scene load_steps=3 format=3 uid="uid://dy2pddht1jd4y"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_ixkua"]
 [ext_resource type="Texture2D" uid="uid://bf7hfqrdt2fjm" path="res://sprites/tiles/grass.png" id="1_lpa1o"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_perlw"]
-texture = ExtResource("1_lpa1o")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_kyh8s"]
-tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_perlw")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -21,12 +12,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ixkua")
 
-[node name="TileMap" type="TileMap" parent="."]
-scale = Vector2(3.6, 3.6)
-tile_set = SubResource("TileSet_kyh8s")
-format = 2
-layer_0/name = "background"
-layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 65542, 0, 0, 131078, 0, 0, 196614, 0, 0, 262150, 0, 0, 327686, 0, 0, 393222, 0, 0, 393221, 0, 0, 393220, 0, 0, 393219, 0, 0, 393218, 0, 0, 393217, 0, 0, 393216, 0, 0, 327680, 0, 0, 262144, 0, 0, 196608, 0, 0, 131072, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 327684, 0, 0, 327683, 0, 0, 262147, 0, 0, 262146, 0, 0, 327682, 0, 0, 327681, 0, 0, 262145, 0, 0, 262148, 0, 0, 196612, 0, 0, 196611, 0, 0, 196610, 0, 0, 196609, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0)
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 800.0
+texture = ExtResource("1_lpa1o")
+stretch_mode = 1
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
