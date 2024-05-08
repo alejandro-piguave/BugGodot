@@ -2,7 +2,7 @@ extends Node2D
 
 enum BallPosition { TOP, LEFT, BOTTOM, RIGHT }
 
-const ballScene = preload("res://scenes/ball.tscn")
+const ball_scene = preload("res://scenes/ball.tscn")
 
 const TILE_COUNT = 7
 const TILE_SIZE = 32
@@ -10,7 +10,7 @@ const MAP_SIZE = TILE_SIZE * TILE_COUNT
 
 const BALL_IMPULSE = 100
 
-const ball_amount: int = 2
+const ball_amount: int = 3
 var detected_balls: int = 0
 var current_balls: Array[Ball]
 
@@ -21,36 +21,36 @@ func _ready():
 	spawn_balls()
 
 func create_ball():
-	var ball = ballScene.instantiate()
+	var ball = ball_scene.instantiate()
 	
-	var ballPosition: BallPosition = randi() % BallPosition.size()
-	var ballTile = randi_range(1, TILE_COUNT - 2)
+	var ball_position: BallPosition = randi() % BallPosition.size()
+	var ball_tile = randi_range(1, TILE_COUNT - 2)
 	 
-	match ballPosition:
+	match ball_position:
 		BallPosition.TOP:
-			ball.position.x = TILE_SIZE * 0.5 + ballTile * TILE_SIZE
+			ball.position.x = TILE_SIZE * 0.5 + ball_tile * TILE_SIZE
 			ball.position.y = TILE_SIZE * 0.5
 			ball.apply_impulse(Vector2(0, BALL_IMPULSE))
-			ball.boundPosition = Ball.BoundPosition.BOTTOM
-			ball.boundValue = MAP_SIZE
+			ball.bound_position = Ball.BoundPosition.BOTTOM
+			ball.bound_value = MAP_SIZE
 		BallPosition.LEFT:
-			ball.position.y = TILE_SIZE * 0.5 + ballTile * TILE_SIZE
+			ball.position.y = TILE_SIZE * 0.5 + ball_tile * TILE_SIZE
 			ball.position.x = TILE_SIZE * 0.5
 			ball.apply_impulse(Vector2(BALL_IMPULSE, 0))
-			ball.boundPosition = Ball.BoundPosition.RIGHT
-			ball.boundValue = MAP_SIZE
+			ball.bound_position = Ball.BoundPosition.RIGHT
+			ball.bound_value = MAP_SIZE
 		BallPosition.BOTTOM:
-			ball.position.x = TILE_SIZE * 0.5 + ballTile * TILE_SIZE
+			ball.position.x = TILE_SIZE * 0.5 + ball_tile * TILE_SIZE
 			ball.position.y = MAP_SIZE - TILE_SIZE * 0.5
 			ball.apply_impulse(Vector2(0, -BALL_IMPULSE))
-			ball.boundPosition = Ball.BoundPosition.TOP
-			ball.boundValue = 0
+			ball.bound_position = Ball.BoundPosition.TOP
+			ball.bound_value = 0
 		BallPosition.RIGHT:
-			ball.position.y = TILE_SIZE * 0.5 + ballTile * TILE_SIZE
+			ball.position.y = TILE_SIZE * 0.5 + ball_tile * TILE_SIZE
 			ball.position.x = MAP_SIZE - TILE_SIZE * 0.5
 			ball.apply_impulse(Vector2(-BALL_IMPULSE, 0))
-			ball.boundPosition = Ball.BoundPosition.LEFT
-			ball.boundValue = 0
+			ball.bound_position = Ball.BoundPosition.LEFT
+			ball.bound_value = 0
 	ball.outOfReach.connect(on_ball_out_of_reach)
 	ball.playerTouch.connect(on_player_touch)
 	

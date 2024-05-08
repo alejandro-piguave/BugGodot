@@ -3,27 +3,26 @@ class_name Ball
 
 enum BoundPosition { TOP, LEFT, BOTTOM, RIGHT }
 
-var boundValue: int
-var boundPosition: BoundPosition
+var bound_value: int
+var bound_position: BoundPosition
 
 signal outOfReach
-
 signal playerTouch
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	match boundPosition:
+	match bound_position:
 		BoundPosition.TOP:
-			if position.y < boundValue: 
+			if position.y < bound_value: 
 				outOfReach.emit()
 		BoundPosition.LEFT:
-			if position.x < boundValue: 
+			if position.x < bound_value: 
 				outOfReach.emit()
 		BoundPosition.BOTTOM:
-			if position.y > boundValue: 
+			if position.y > bound_value: 
 				outOfReach.emit()
 		BoundPosition.RIGHT:
-			if position.x > boundValue: 
+			if position.x > bound_value: 
 				outOfReach.emit()
 
 func _on_area_2d_body_entered(body):
