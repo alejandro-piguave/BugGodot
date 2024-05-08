@@ -26,7 +26,8 @@ func _physics_process(delta):
 		
 		rotation = atan2(-velocity.x, velocity.y)
 		$Sprite.play(current_animation)
-		$StreamPlayer.play()
+		if not $StreamPlayer.playing:
+			$StreamPlayer.play()
 	
 	move_and_slide()
 	

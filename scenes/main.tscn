@@ -49,91 +49,6 @@ radius = 18.1818
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}],
-"loop": true,
-"name": &"blue",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}],
-"loop": true,
-"name": &"bronze",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}],
-"loop": true,
-"name": &"gold",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}],
-"loop": true,
-"name": &"gray",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}],
-"loop": true,
-"name": &"green",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("25_4v58x")
 }, {
 "duration": 1.0,
@@ -156,23 +71,6 @@ animations = [{
 "loop": true,
 "name": &"red_dead",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}],
-"loop": true,
-"name": &"silver",
-"speed": 30.0
 }]
 
 [node name="Node2D" type="Node2D"]
@@ -211,7 +109,7 @@ shape = SubResource("CircleShape2D_nhsyk")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Bug"]
 sprite_frames = SubResource("SpriteFrames_brwon")
-animation = &"red_dead"
+animation = &"red"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
