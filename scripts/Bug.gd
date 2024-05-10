@@ -32,6 +32,8 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func die():
+	if dead:
+		return
 	$StreamPlayer.stream = load("res://sounds/wack.mp3")
 	$StreamPlayer.play()
 	$Sprite.play(current_animation+"_dead")

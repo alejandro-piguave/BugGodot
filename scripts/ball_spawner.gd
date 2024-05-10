@@ -51,8 +51,8 @@ func create_ball():
 			ball.apply_impulse(Vector2(-BALL_IMPULSE, 0))
 			ball.bound_position = Ball.BoundPosition.LEFT
 			ball.bound_value = 0
-	ball.outOfReach.connect(on_ball_out_of_reach)
-	ball.playerTouch.connect(on_player_touch)
+	ball.out_of_reach.connect(on_ball_out_of_reach)
+	ball.player_touch.connect(on_player_touch)
 	
 	return ball
 	
